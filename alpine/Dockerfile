@@ -7,17 +7,8 @@
 #
 # Stage 1 : Builder
 #
-FROM scratch AS builder
-
-#
-# Define build arguments
-#
-ARG ROOTFS_FILE="unknown"
-
-#
-# Extract files to the root directory
-#
-ADD ${ROOTFS_FILE} /
+ARG ALPINE_TAG="unknown"
+FROM alpine:${ALPINE_TAG} AS builder
 
 #
 # Optimize system
