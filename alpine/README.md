@@ -4,12 +4,11 @@ A project for building Docker image based on Alpine Linux .
 
 ## Supported tags
 
-| Format   | Example  | Description           |
-|----------|----------|-----------------------|
-| `latest` | `latest` | Latest stable version |
-| `X`      | `3`      | Major version only    |
-| `X.Y`    | `3.23`   | Major & minor version |
-| `X.Y.Z`  | `3.23.4` | Full semantic version |
+`gentkit/alpine`:<TAG_NAME>
+
+| BUILD ARG                            | TAG NAME                                                       |
+|--------------------------------------|----------------------------------------------------------------|
+| ALPINE_TAG=`<Major>.<Minor>.<Patch>` | `<Major>.<Minor>.<Patch>` `<Major>.<Minor>` `<Major>` `latest` |
 
 ## Pull and run into a new container
 
