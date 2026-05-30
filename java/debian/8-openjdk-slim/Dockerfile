@@ -7,15 +7,16 @@
 #
 # Stage 1 : Builder
 #
-FROM gentkit/alpine:latest AS builder
+FROM gentkit/debian:latest AS builder
 
 #
 # Optimize system
 #
 RUN set -eu && \
-    apk update --no-cache && \
-    apk add --no-cache openjdk17 && \
-    rm -rf /var/cache/apk/*
+    apt update && \
+    apt install -y openjdk-8-jdk && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
 
 #
 # Stage 2 : Production
