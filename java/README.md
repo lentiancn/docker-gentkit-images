@@ -7,21 +7,22 @@ A project for building Docker image based on Java environment .
 
 ## Supported tags
 
+### based on Debian Linux (gentkit/debian:latest)
+
+[latest]()
+[openjdk-slim]()
+[21-openjdk-slim]()
+[17-openjdk-slim]()
+[11-openjdk-slim]()
+[8-openjdk-slim]()
+
 ### based on Alpine Linux (gentkit/alpine:latest)
 
-[latest-openjdk-alpine]()
+[openjdk-alpine]()
 [21-openjdk-alpine]()
 [17-openjdk-alpine]()
 [11-openjdk-alpine]()
 [8-openjdk-alpine]()
-
-### based on Debian Linux (gentkit/debian:latest-slim)
-
-[latest-openjdk-debian]()
-[21-openjdk-debian]()
-[17-openjdk-debian]()
-[11-openjdk-debian]()
-[8-openjdk-debian]()
 
 ## Pull and run into a new container
 
