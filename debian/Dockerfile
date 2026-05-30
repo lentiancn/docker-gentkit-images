@@ -7,8 +7,8 @@
 #
 # Stage 1 : Builder
 #
-ARG DEBIAN_TAG="unknown"
-FROM debian:${DEBIAN_TAG} AS builder
+ARG DEBIAN_IMAGE_TAG="unknown"
+FROM debian:${DEBIAN_IMAGE_TAG} AS builder
 
 #
 # Optimize system
