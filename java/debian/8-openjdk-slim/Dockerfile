@@ -14,6 +14,7 @@ FROM gentkit/debian:latest AS builder
 #
 RUN set -eu && \
     apt update && \
+    apt install -y sudo && \
     apt install -y openjdk-8-jdk && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
