@@ -13,7 +13,7 @@ FROM debian:${DEBIAN_IMAGE_TAG} AS builder
 #
 # Optimize system
 #
-RUN set -eu && \
+RUN set -eux && \
     # Update package index \
     apt update -y && \
     # Install locale and configure \
@@ -24,7 +24,7 @@ RUN set -eu && \
     echo 'export LANG=en_US.UTF-8' > /etc/profile.d/glocale.sh && \
     echo 'export LC_ALL=en_US.UTF-8' >> /etc/profile.d/glocale.sh && \
     # Clean \
-    apt clean -y && \
+    apt clean -y && apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/* && \
     # Reset welcome message \
     DEBIAN_VERSION=$(grep VERSION_ID /etc/os-release | cut -d'=' -f2) && \
