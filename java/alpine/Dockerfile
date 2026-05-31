@@ -20,15 +20,15 @@ ARG JDK_MAJOR
 RUN set -eu && \
     apk update --no-cache && \
     if [ "${JDK_MAJOR}" = "8" ]; then \
-        apk add --no-cache openjdk8 && \
+        apk add --no-cache openjdk8 ; \
     elif [ "${JDK_MAJOR}" = "11" ]; then \
-        apk add --no-cache openjdk11 && \
+        apk add --no-cache openjdk11 ; \
     elif [ "${JDK_MAJOR}" = "17" ]; then \
-        apk add --no-cache openjdk17 && \
+        apk add --no-cache openjdk17 ; \
     elif [ "${JDK_MAJOR}" = "21" ]; then \
-        apk add --no-cache openjdk21 && \
+        apk add --no-cache openjdk21 ; \
     else \
-        echo "Unsupported JDK version: ${JDK_MAJOR}" && exit 1; \
+        echo "Unsupported JDK version: ${JDK_MAJOR}" >&2; exit 1 ; \
     fi && \
     rm -rf /var/cache/apk/*
 
