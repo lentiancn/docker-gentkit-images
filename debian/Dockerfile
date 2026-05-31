@@ -7,7 +7,7 @@
 #
 # Stage 1 : Builder
 #
-ARG DEBIAN_IMAGE_TAG
+ARG DEBIAN_IMAGE_TAG=UNKNOWN
 FROM debian:${DEBIAN_IMAGE_TAG} AS builder
 
 #
