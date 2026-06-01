@@ -26,6 +26,20 @@ A project for building Docker image based on Debian Linux .
 
 **NOTE** : Replace `13.<MINOR>` with actual version number from https://www.debian.org/releases/trixie/, e.g. 13.4
 
+## Configure Debian
+
+```shell
+# E.g. for the en_US.UTF-8
+
+sed -i '/^# *en_US.UTF-8/s/^# //' /etc/locale.gen
+
+locale-gen
+
+update-locale LANG="en_US.UTF-8" LC_ALL="en_US.UTF-8"
+
+locale -a
+```
+
 ## Pull and run into a new container
 
 ```shell

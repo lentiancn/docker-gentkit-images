@@ -18,11 +18,6 @@ RUN set -eux && \
     apt update -y && \
     # Install locale and configure \
     apt install --no-install-recommends locales -y && \
-    sed -i '/^# *en_US.UTF-8/s/^# //' /etc/locale.gen && \
-    locale-gen && \
-    update-locale LANG="en_US.UTF-8" LC_ALL="en_US.UTF-8" && \
-    echo 'export LANG=en_US.UTF-8' > /etc/profile.d/glocale.sh && \
-    echo 'export LC_ALL=en_US.UTF-8' >> /etc/profile.d/glocale.sh && \
     # Clean \
     apt clean -y && apt autoremove -y && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /var/cache/apt/* && \
